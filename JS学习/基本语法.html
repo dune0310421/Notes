@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <script src="jquery-3.6.0.min.js"></script><!--head中添加-->
+</head>
+<body>
+    <ul id="test">
+        <li class="js">js</li>
+        <li name="python">python</li>
+    </ul>
+    <script>
+        $('#test li[name=python]').text();//选择ul中的具体元素，获取文本
+        $('#test li[name=python]').text('zgq');//设置值
+        $('#test li[name=python]').show()
+        $('#test li[name=python]').hide();
+        $('#test').html();//获取html内容
+        $(window).width()
+        $('#test').html('<strong>zgq</strong>');//修改html，设置html内容（会覆盖）
+    </script>
+</body>
+</html>
