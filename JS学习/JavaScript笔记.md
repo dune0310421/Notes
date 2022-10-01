@@ -77,7 +77,7 @@
 
    * Application可以存一些数据
 
-   ![image-20220111213131085](C:\Users\Dune\AppData\Roaming\Typora\typora-user-images\image-20220111213131085.png)
+   ![image-2](../img/js-1.png)
 
    
 
@@ -250,7 +250,7 @@ person.job = 'cctv'  //属性添加
 
 * hasOwnProperty()方法
 
-![image-20220113170000872](C:\Users\Dune\AppData\Roaming\Typora\typora-user-images\image-20220113170000872.png)
+![image-1](../img/js-2.png)
 
 ### 3.4 流程控制
 
