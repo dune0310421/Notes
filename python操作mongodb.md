@@ -70,22 +70,22 @@ db.COLLECTION_NAME.find().count()
 | 运算符                                                       | 描述         | 示例                |
 | ------------------------------------------------------------ | ------------ | ------------------- |
 | field:value                                                  | 字段值=value | { name : "myName" } |
-| $gt         | 大于                                                     | { size : { $gt : 5 } } |              |                     |
-| $gte        | 大于等于                                                 | { size : { $gte : 5 } } |              |                     |
-| $lt         | 小于                                                     | { size : { $lt : 5} } |              |                     |
-| $lte        | 小于等于                                                 | { size : { $lte : 5 } } |              |                     |
-| $ne         | 不等于                                                   | { name : {$ne : "badName"} } |              |                     |
-| $in         | 包含于指定数组[]                                         | { like : { $in : [ "C","JAVA" ] } } |              |                     |
-| $nin        | 不包含于指定数组[]                                       | { name : { $nin : ["html","css"] } } |              |                     |
-| $or         | 逻辑或连接查询                                           | { $or : [ {size : {$lt : 5} }, {size : {$gt : 10} } ] } |              |                     |
-| $and        | 逻辑与连接查询                                           | { $and : [ { size : { $gt : 5 } },{ size : { $lt : 10 } } ] } |              |                     |
-| $not        | 反转查询（不等于）                                       | { $not : { name : "myName" } } |              |                     |
-| $nor        | 逻辑或非连接查询，不等于任一个                           | { $nor : { size : { $gt : 5 } },{ size : { $lt : 0 } } } |              |                     |
-| $exists     | true-包含指定字段，false-不包含该字段                    | { name : { $exists : true } } |              |                     |
-| $regex      | 匹配正则表达式                                           | { myString : { $regex : ' some.*exp ' } } |              |                     |
-| $all        | 指定数组包含所有指定元素                                 | { word : { $all : [ 'a','b','c' ] } } |              |                     |
-| $elemMatch  | 返回指定的数组字段至少有一个元素与指定的条件都匹配的文档 | { myArr : { $elemMatch : { { value : { $gt : 5 } },{ size : { $lt : 10 } } } } } |              |                     |
-| $size       | 指定数组的长度                                           | { myArr : { $size : 5 } } |              |                     |
+| `$gt`         | 大于                                                     | { size : { `$gt` : 5 } } |              |                     |
+| `$gte`        | 大于等于                                                 | { size : { `$gte` : 5 } } |              |                     |
+| `$lt`         | 小于                                                     | { size : { `$lt` : 5} } |              |                     |
+| `$lte`        | 小于等于                                                 | { size : { `$lte` : 5 } } |              |                     |
+| `$ne`         | 不等于                                                   | { name : {`$ne` : "badName"} } |              |                     |
+| `$in`         | 包含于指定数组[]                                         | { like : { `$in` : [ "C","JAVA" ] } } |              |                     |
+| `$nin`        | 不包含于指定数组[]                                       | { name : { `$nin` : ["html","css"] } } |              |                     |
+| `$or`         | 逻辑或连接查询                                           | { `$or` : [ {size : {`$lt` : 5} }, {size : {`$gt` : 10} } ] } |              |                     |
+| `$and`        | 逻辑与连接查询                                           | { `$and` : [ { size : { `$gt` : 5 } },{ size : { `$lt` : 10 } } ] } |              |                     |
+| `$not`        | 反转查询（不等于）                                       | { `$not` : { name : "myName" } } |              |                     |
+| `$nor`        | 逻辑或非连接查询，不等于任一个                           | { `$nor` : { size : { `$gt` : 5 } },{ size : { `$lt` : 0 } } } |              |                     |
+| `$exists`     | true-包含指定字段，false-不包含该字段                    | { name : { `$exists` : true } } |              |                     |
+| `$regex`      | 匹配正则表达式                                           | { myString : { `$regex` : ' some.*exp ' } } |              |                     |
+| `$all`        | 指定数组包含所有指定元素                                 | { word : { `$all` : [ 'a','b','c' ] } } |              |                     |
+| `$elemMatch`  | 返回指定的数组字段至少有一个元素与指定的条件都匹配的文档 | { myArr : { `$elemMatch` : { { value : { `$gt` : 5 } },{ size : { `$lt` : 10 } } } } } |              |                     |
+| `$size`       | 指定数组的长度                                           | { myArr : { `$size` : 5 } } |              |                     |
 
 在文档中尽量不要将值赋为null，因为进行null查询时（例如name=null），不仅会返回name值为null的文档，也会将不包含name字段的文档返回。所以应尽量避免使用null值，而应不包含这样的字段，这样就可以使用 $exists运算符进行不包含查询了。
 
