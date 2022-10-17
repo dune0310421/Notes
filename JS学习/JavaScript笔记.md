@@ -77,7 +77,7 @@
 
    * Application可以存一些数据
 
-   ![image-2](../img/js-1.png)
+   ![image-2](img/js-1.png)
 
    
 
@@ -250,7 +250,7 @@ person.job = 'cctv'  //属性添加
 
 * hasOwnProperty()方法
 
-![image-1](../img/js-2.png)
+![image-1](img/js-2.png)
 
 ### 3.4 流程控制
 
