@@ -231,7 +231,7 @@ TODO：对齐后列表前还需要看css文档
 
 #### 4.1.1 标题
 
-bootstrap对<h1>到<h6>标题效果进行了覆盖。
+bootstrap对`<h1>`到`<h6>`标题效果进行了覆盖。
 
 此外提供了 `.h1` 到 `.h6` 类，给内联(inline)属性的文本赋予标题的样式。副标题`.small`。
 
@@ -245,7 +245,7 @@ bootstrap对<h1>到<h6>标题效果进行了覆盖。
 
  `.lead` 类：让段落突出显示，增大字号、调整行高和margin。
 
-<small>小字号，<b><strong>加粗，<i><em>斜体，<del><s>删除线，<u><ins>下划线。
+`<small>`小字号，`<b>`、`<strong>`加粗，`<i>`、`<em>`斜体，`<del>`、`<s>`删除线，`<u>`、`<ins>`下划线。
 
 #### 4.1.3 强调
 
@@ -278,9 +278,9 @@ CSS中常用text-align实现对齐，但是bootstrap将它们统一成class。
 
 列表共有3种类型
 
-* 无序列表<ul><li>...</li></ul>
-* 有序列表<ol><li>...</li></ol>
-* 自定义列表<dl><dt>...</dt><dd>...</dd></dl>
+* 无序列表`<ul><li>...</li></ul>`
+* 有序列表`<ol><li>...</li></ol>`
+* 自定义列表`<dl><dt>...</dt><dd>...</dd></dl>`
 
 ##### 去点列表
 
@@ -522,13 +522,13 @@ TODO：看css网页，按钮之前有很多例子
 
 ##### 单选框和复选框
 
-单选框<radio>，复选框<checkbox>
+单选框`<radio>`，复选框`<checkbox>`
 
 分为两种：竖直显示和水平显示
 
-竖直显示：在<div>中设置class为`.radio`或`.checkbox`。
+竖直显示：在`<div>`中设置class为`.radio`或`.checkbox`。
 
-例子中将<input>标签放在<label>中可以绑定文字和复选框。
+例子中将`<input>`标签放在`<label>`中可以绑定文字和复选框。
 
 ```html
 <div class="row">
@@ -614,7 +614,7 @@ class中添加`.disabled`只是在hover时呈现禁用样式。这两种禁用�
 
 ##### 静态控件
 
-为 <p>元素添加 `.form-control-static` 类，可以在表单中将一行纯文本和 <label>元素放置于同一行。
+为 `<p>`元素添加 `.form-control-static` 类，可以在表单中将一行纯文本和` <label>`元素放置于同一行。
 
 ```html
 <form class="form-inline"> <!--内联布局form-inline后面会讲到-->
@@ -638,13 +638,13 @@ class中添加`.disabled`只是在hover时呈现禁用样式。这两种禁用�
 
 创建表单步骤：
 
-* 向父<form>元素添加role="form"
-* 将标签和控件放在一个带有`.form-group`类的<div>中，表示是表单的一组，以获取元素间的最佳间距。
-* 将所有的文本元素<input><textarea><select>中添加`.form-control`类。
+* 向父`<form>`元素添加role="form"
+* 将标签和控件放在一个带有`.form-group`类的`<div>`中，表示是表单的一组，以获取元素间的最佳间距。
+* 将所有的文本元素`<input>`、`<textarea>`、`<select>`中添加`.form-control`类。
 
 `.form-group`可以设置大小`.form-group-lg`等(同按钮大小设置)。
 
-所有设置了 `.form-control` 类的 <input>、<textarea> 和 <select>元素都将被默认设置宽度属性为 width: 100%，因此配合<label>和栅格网格系统达到最佳视觉效果。注意，在<input>中，type是必需的。
+所有设置了 `.form-control` 类的 `<input>`、`<textarea> `和`<select>`元素都将被默认设置宽度属性为 width: 100%，因此配合`<label>`和栅格网格系统达到最佳视觉效果。注意，在`<input>`中，type是必需的。
 
 ##### 水平表单
 
@@ -697,7 +697,7 @@ class中添加`.disabled`只是在hover时呈现禁用样式。这两种禁用�
 
 为表单添加 `.form-inline` 类，可使内容左对齐并且表现为inline-block级别的控件，因此表单所有控件都在同一行显示。只适用于视口（viewport）至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。
 
-注意，可能需要手动设置宽度；一定要为每个输入控件设置 <label>标签，即使通过为 <label>设置 `.sr-only` 类进行隐藏。
+注意，可能需要手动设置宽度；一定要为每个输入控件设置` <label>`标签，即使通过为 `<label>`设置 `.sr-only` 类进行隐藏。
 
 内联表单中无需设置格子(col)，因为所有元素都在同一行，设置格子没有意义。
 
@@ -890,9 +890,9 @@ class中添加`.disabled`只是在hover时呈现禁用样式。这两种禁用�
 
 下拉菜单项使用一个ul列表，并且定义一个类名为`.dropdown-menu`
 
-* 分组分割线：<li>加类名`.divider`
+* 分组分割线：`<li>`加类名`.divider`
 
-* 分组标题：<li>加类名`.dropdown-header`
+* 分组标题：`<li>`加类名`.dropdown-header`
 
 * 对齐方式：`.dropdown-menu-left`左对齐默认样式`.dropdown-menu-right`右对齐
 
