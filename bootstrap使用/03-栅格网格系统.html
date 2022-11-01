@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格网格系统</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--列组合-->
+        <div class="row"> <!--行-->
+            <div class="col-md-4 col-lg-4" style="background-color: #9acfea">占4格</div> <!--列-->
+            <div class="col-md-8" style="background-color: #e4b9c0">占8格</div>
+        </div>
+
+        <hr>
+        <!--列偏移-->
+        <div class="row"> <!--行-->
+            <div class="col-md-2" style="background-color: #f8efc0">占2格</div> <!--列-->
+            <div class="col-md-2 col-md-offset-3" style="background-color: #f0ad4e">偏移3格，占2格</div>
+        </div>
+
+        <hr>
+        <!--列排序-->
+        <div class="row"> <!--排序前-->
+            <div class="col-md-1" style="background-color: #dff0d8">占1格</div>
+            <div class="col-md-2" style="background-color: #f8efc0">占2格</div>
+            <div class="col-md-4" style="background-color: #985f0d">占4格</div>
+            <div class="col-md-2" style="background-color: #ebccd1">占2格</div>
+        </div>
+        <div class="row"> <!--排序后-->
+            <div class="col-md-1" style="background-color: #dff0d8">占1格</div>
+            <div class="col-md-2 col-md-push-1" style="background-color: #f8efc0">后移1格，占2格</div>
+            <div class="col-md-4" style="background-color: #985f0d">占4格</div>
+            <div class="col-md-2 col-md-pull-1" style="background-color: #ebccd1">前移1格，占2格</div>
+        </div>
+
+        <hr>
+        <!--列嵌套-->
+        <div class="row"> <!--行-->
+            <div class="col-md-6" style="background-color: #dff0d8"> <!--列-->
+                <div class="row"> <!--嵌套的行-->
+                    <div class="col-md-1" style="background-color: #e4b9b9">嵌套1格</div>
+                    <div class="col-md-2" style="background-color: #f8efc0">嵌套2格</div>
+                </div>
+            </div>
+            <div class="col-md-2" style="background-color: #f8efc0">占2格</div>
+            <div class="col-md-4" style="background-color: #985f0d">占4格</div>
+        </div>
+
+    </div>
+</body>
+</html>

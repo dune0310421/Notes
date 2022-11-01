@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单布局</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <!--水平表单-->
+        <form action="#" class="form-horizontal" role="form">
+            <!--表单中的表单元素组-->
+            <h2 class="text-center">用户信息</h2>
+            <div class="form-group">
+                <label for="uname" class="control-label col-md-2 col-md-offset-1">姓名</label>
+                <div class="col-md-6">
+                    <input type="text" id="uname" class="form-control" placeholder="请输入姓名"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd" class="control-label col-md-2 col-md-offset-1">密码</label>
+                <div class="col-md-6">
+                    <input type="text" id="pwd" class="form-control" placeholder="请输入密码"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2 col-md-offset-1">性别</label>
+                <div class="col-md-2">
+                    <label class="radio-inline"><input type="radio" name="sex"/>男</label>
+                    <label class="radio-inline"><input type="radio" name="sex"/>女</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="city" class="control-label col-md-2 col-md-offset-1">城市</label>
+                <div class="col-md-2">
+                    <select id="city" class="form-control">
+                        <option>请选择城市</option>
+                        <option>北京</option>
+                        <option>上海</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group text-center">
+                <button class="btn btn-primary">提交</button>
+            </div>
+        </form>
+
+        <!--内联表单-->
+        <hr>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="uname1">姓名</label>
+                <input type="text" id="uname1" class="form-control" placeholder="请输入姓名"/>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd1" class="control-label">密码</label>
+                <input type="text" id="pwd1" class="form-control" placeholder="请输入密码"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">性别</label>
+                <label class="radio-inline"><input type="radio" name="sex"/>男</label>
+                <label class="radio-inline"><input type="radio" name="sex"/>女</label>
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only" for="num">学费</label>
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input type="text" class="form-control" id="num" placeholder="Amount">
+                    <div class="input-group-addon">.00</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary">提交</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+    <br>
+    <hr>
+    <!--文本框-->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="id1">输入框1</label>
+                <input type="text" class="form-control" id="id1" placeholder="请输入"/>
+                <br>
+            </div>
+            <input type="text" class="form-control input-lg"/>
+            <br>
+            <input type="text" class="form-control input-sm"/>
+            <br>
+        </div>
+    </div>
+
+    <!--下拉框-->
+    <div class="row">
+        <div class="col-md-2">
+            <select class="form-control">
+                <option>请选择城市</option>
+                <option>北京</option>
+                <option>上海</option>
+            </select> <br>
+        </div>
+        <div class="col-md-2">
+            <select class="form-control" multiple="multiple">
+                <option>请选择城市</option>
+                <option>北京</option>
+                <option>上海</option>
+                <option>成都</option>
+                <option>松原</option>
+            </select> <br>
+        </div>
+    </div>
+
+    <!--文本域-->
+    <div class="row">
+        <div class="col-md-4">
+            <textarea class="form-control">
+            </textarea> <br>
+        </div>
+    </div>
+
+    <!--单选框、复选框-->
+    <!--竖直方向显示-->
+    <div class="row">
+        <div class="col-md-2">
+            <div class="checkbox">
+                <label><input type="checkbox" name="hobby"/>唱歌</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="hobby"/>跳舞</label>
+            </div>
+        </div>
+    </div>
+    <!--水平方向显示-->
+    <div class="row">
+        <div class="col-md-2">
+            <label class="radio-inline"><input type="radio" name="sex"/>男</label>
+            <label class="radio-inline"><input type="radio" name="sex"/>女</label>
+        </div>
+    </div>
+
+    <!--按钮-->
+    <button class="btn">基础按钮</button>
+    <button class="btn btn-default">(默认样式)Default</button>
+    <button class="btn btn-primary">(首选项)Primary</button>
+    <button class="btn btn-success">(成功)Success</button>
+    <button class="btn btn-info">(一般信息)Info</button>
+    <button class="btn btn-warning">(警告)Warning</button>
+    <button class="btn btn-danger">(危险)Danger</button>
+    <button class="btn btn-link">(链接)Link</button><br>
+
+    <br>
+    <!--通过按钮样式设置其他元素为按钮效果-->
+    <a href="#" class="btn btn-danger">a标签</a>
+    <span class="btn btn-primary">span标签</span>
+    <div class="btn btn-info">div标签</div><br>
+
+    <br>
+    <!--设置按钮大小-->
+    <button class="btn btn-default">(默认样式)Default</button>
+    <button class="btn btn-primary btn-lg">(首选项)Primary</button>
+    <button class="btn btn-success btn-ms">(成功)Success</button>
+    <button class="btn btn-info btn-xs">(一般信息)Info</button><br>
+
+    <button class="btn btn-primary btn-block">(块级元素)按钮</button>
+    <button class="btn btn-default btn-block">(块级元素)按钮</button><br>
+
+    <br>
+    <!--按钮禁用-->
+    <button class="btn" onclick="alert('hello');" disabled="disabled">禁用</button>
+    <button class="btn btn-primary disabled" onclick="alert('hello');">样式禁用</button>
+    <!--激活状态-->
+    <button class="btn active">保持激活状态样式</button><br>
+
+    </div>
+</body>
+</html>

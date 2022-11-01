@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <!--引入jquery核心js文件，需要在bootstrap的js之前引入-->
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="UTF-8"></script>
+    <!--引入bootstrap的js文件-->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<hr>
+<div class="container">
+        <!--使用一个类名为dropdown或btn-group的div包裹整个下拉框-->
+    <div class="dropdown">
+        <!--使用button作为父菜单，使用类名.dropdown-toggle和自定义data-toggle属性-->
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            央视主持人
+            <span class="caret"></span> <!--下拉箭头-->
+        </button>
+
+        <ul class="dropdown-menu">
+            <!--分组标题：<li>加类名.dropdown-header-->
+            <li class="dropdown-header">--CCTV1--</li>
+            <li><a href="https://baike.baidu.com/item/%E6%92%92%E8%B4%9D%E5%AE%81/485256?fr=aladdin" target="_blank">撒贝宁</a></li>
+            <li class="divider"></li><!--分组分割线：<li>加类名.divider-->
+            <li class="dropdown-header">--CCTV13--</li>
+            <li class="active"><a href="https://baike.baidu.com/item/%E6%9C%B1%E5%B9%BF%E6%9D%83?fromModule=lemma_search-box" target="_blank">朱广权</a></li>
+            <li><a href="https://baike.baidu.com/item/%E6%9D%8E%E6%96%87%E9%9D%99/145?fromModule=lemma_search-box" target="_blank">李文静</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
