@@ -191,7 +191,7 @@ print(res.matched_count, res.modified_count) # 匹配的记录数、影响的记
 
 ```python
 user_data = ({'uid': uid, 'user_data': data} for uid, data in user_dict.items())
-user_collection.insert_many(user_data, ordere=False)
+user_collection.insert_many(user_data, ordered=False)
 ```
 
 #### 2.常用修改器
