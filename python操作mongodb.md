@@ -22,7 +22,7 @@ Mongodb 中使用bson 存储数据（可以理解为在 json 的基础上添加�
 
 ```python
 import pymongodb
-def connect_mongo(query={},host='localhost', port=27017, username=None, password=None, no_id=True):
+def connect_mongo(query={},host='localhost', port=27017, username=None, password=None, db='test'):
     if username and password:
         mongo_uri = "mongodb://%s:%s@%s:%s/%s" % (username, password, host, port, db)
         client = pymongo.MongoClient(mongo_uri)
@@ -50,6 +50,8 @@ db = client.A.B
 db.COLLECTION_NAME.find()
 #查询指定某键值的数据，多个键时查询交集
 db.COLLECTION_NAME.find({ key1: value1, key2: value2 })
+#查询第一个满足条件的数据
+db.COLLECTION_NAME.find_one({ key1: value1, key2: value2 })
 #模糊查询，正则匹配
 {"name":/^start/} #以 'start' 开头的匹配式
 {"name":/tail$/} #以 'tail' 结尾的匹配式
@@ -58,11 +60,12 @@ db.COLLECTION_NAME.find().limit(10)
 # 跳过前n个数据记录
 db.COLLECTION_NAME.find().skip(3)
 # 排序
-db.COLLECTION_NAME.find().sort({KEY:1|-1}) # 1：升序，-1：降序
+db.COLLECTION_NAME.find().sort([(KEY1,1|-1),(KEY2,1|-1)]) # 1：升序，-1：降序
 db.COLLECTION_NAME.find(sort=[(KEY,pymongo.ASCENDING)]) # ASCENDING-升 DESCENDING-降
 db.COLLECTION_NAME.find().sort([(KEY,pymongo.ASCENDING)])
 # 计数
-db.COLLECTION_NAME.find().count()
+db.COLLECTION_NAME.find().count() #已弃用
+db.COLLECTION_NAME.count_document({ key1: value1, key2: value2 })
 ```
 
 #### 2.条件查询
@@ -380,3 +383,66 @@ asyncio.get_event_loop().run_until_complete(run())
 elapsed = (time.clock() - start)
 print("Time used:",elapsed) # 仅仅1秒左右就完成了任务
 ```
+
+### colab连接本地数据库
+
+>非常感谢chatGPT的方案！！！虽然有瑕疵但是结合csdn教程足够了！！
+
+在colab的ipynb文件中输入
+
+```python
+!apt install mongodb # 或 pip install？
+!service mongodb start #这个好像可以没有
+```
+
+安装ngrok https://ngrok.com/download
+
+进行内网穿透
+
+(全教程参考 https://blog.csdn.net/sinat_34842630/article/details/124992878 )
+
+在命令行上运行ngrok，命令如下：
+
+```bash
+./ngrok authtoken YOUR_AUTH_TOKEN
+#windows应该用 ngrok config add-authtoken YOUR_AUTH_TOKEN
+./ngrok tcp 27017
+```
+
+其中`YOUR_AUTH_TOKEN`应替换为您的ngrok身份验证令牌。它将显示如下信息：
+
+```css
+ngrok by @inconshreveable                                                 (Ctrl+C to quit)                                   
+Session Status                online                                     
+Session Expires               7 hours, 59 minutes                                     
+Version                       2.3.35                                                   
+Region                        United States (us)                                       
+Web Interface                 http://127.0.0.1:4040                                   
+Forwarding                    tcp://x.tcp.ngrok.io:XXXXX -> localhost:27017           
+   
+Connections                   ttl     opn     rt1     rt5     p50     p90             
+                              0       0       0.00    0.00    0.00    0.00 
+```
+
+其中，`x.tcp.ngrok.io`是host，`XXXXX`就是 ngrok 的公网port。
+
+连接到MongoDB
+
+在代码单元格中输入以下代码以连接到MongoDB：
+
+```python
+from pymongo import MongoClient
+
+# 您需要将`localhost:XXXXX`替换为您在上一步中看到的 ngrok 公网端口号
+client = MongoClient('mongodb://x.tcp.ngrok.io:XXXXX/')
+
+# 将`test`替换为您要连接的MongoDB数据库的名称
+db = client.test
+
+# 进行其他操作...
+```
+
+请注意，当您断开与Colab的连接时，ngrok端口也会关闭，因此您需要重新启动ngrok并将其连接到MongoDB。
+
+
+
