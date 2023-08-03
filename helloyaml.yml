@@ -1,0 +1,59 @@
+# yaml是一种表示数据序列化的格式
+# 使用缩进表示层级关系，同一层级缩进相同
+
+# 纯量
+string: this is a string
+int_num: 12
+float_num: 1.2
+bool_num: true
+null_num: ~ # 空值
+timestamp: 2023-03-10T12:20:12+8:00 # 时间是ISO 8601格式
+date: 2023-03-10
+# 长字符串
+str1: >
+  line1
+  line2
+  line3
+# 解析结果："line1 line2 line3\n"
+str2: >-
+  line1
+  line2
+  line3
+# 解析结果："line1 line2 line3" 不要最后的\n
+str2: |
+  line1
+  line2
+  line3
+# 解析结果："line1\nline2\nline3" 每一行都有\n
+
+
+# 数组
+arr1:
+- 123 # -表示一个分量
+- 456
+arr2: [123, 456] # 这种写法分量只能为纯量
+
+# 对象
+container:
+  name: mysql
+  image: mysql.jpg
+  port: 1236
+
+# 一个综合性example
+apiVersion: V1
+kind: Pod
+metadata:
+  name: 1
+spec:
+- name: radis # 第一个元素
+  image: radis.jpg
+  stdin: true
+  port: 
+  - containerPort: 123
+  - hostPort: 124
+- name: mongodb # 第二个元素
+  image: mongodb.jpg
+  stdin: false
+  port: 
+  - containerPort: 125
+  - hostPort: 126
