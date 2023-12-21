@@ -28,5 +28,12 @@
 
 将远程分支的东西pull到本地 git pull
 
+检出(本地repo->workspace，可以防误删) git checkout
+
 >git操作详解 https://zhuanlan.zhihu.com/p/183092443
 
+
+
+
+
+在cmd中cd的时候输入目录前几个字母 按tab可以补全目录
